@@ -8,6 +8,56 @@ The application uses Flask for backend development, SQLite for data storage, SQL
 
 ---
 
+## Application Screenshots
+
+### Dashboard
+
+The dashboard provides financial analytics including income, expenses, balance, savings goals, and budget monitoring.
+
+![Dashboard](screenshots/dashboard.jpeg)
+
+---
+
+### Transaction Management
+
+Users can add, manage, and delete income and expense transactions.
+
+![Transactions](screenshots/transactions.jpeg)
+
+---
+
+### CSV Export
+
+Transaction data can be exported and downloaded as a CSV file.
+
+![CSV Export](screenshots/csv-export.jpeg)
+
+---
+
+### Task Management
+
+Track personal finance-related tasks with status updates.
+
+![Tasks](screenshots/tasks.jpeg)
+
+---
+
+### User Profile
+
+Displays user details and activity statistics.
+
+![Profile](screenshots/profile.jpeg)
+
+---
+
+### User Registration
+
+Allows new users to create an account securely.
+
+![Registration](screenshots/register.jpeg)
+
+---
+
 ## Key Features
 
 ### User Authentication
@@ -325,6 +375,6 @@ Enhanced dashboard analytics with financial summaries and better user experience
 
 ## Author
 
-Kanisha
+**Kanisha**
 
 Smart Finance Manager – Personal Finance Tracking and Budget Management System.
