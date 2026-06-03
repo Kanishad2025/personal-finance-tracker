@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="task-box">
+
+    <h2>User Profile</h2>
+
+    <div class="summary-grid">
+
+        <div class="card balance">
+            <div>Username</div>
+            <strong>{{ current_user.username }}</strong>
+        </div>
+
+        <div class="card income">
+            <div>Email</div>
+            <strong>{{ current_user.email }}</strong>
+        </div>
+
+        <div class="card expense">
+            <div>Total Transactions</div>
+            <strong>{{ transaction_count }}</strong>
+        </div>
+
+        <div class="card balance">
+            <div>Total Tasks</div>
+            <strong>{{ task_count }}</strong>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

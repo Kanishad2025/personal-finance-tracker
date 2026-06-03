@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="task-box">
-    <h2>Personal Finance Dashboard</h2>
+    <h2>Financial Analytics Dashboard</h2>
     <form method="GET" action="{{ url_for('finance.dashboard') }}" class="task-form">
         <input type="month" name="month" value="{{ selected_month }}">
         <button type="submit" class="btn">Filter</button>
@@ -40,6 +40,23 @@
         </div>
     {% endif %}
    </div>
+   <div class="card expense" style="margin-top:15px;">
+    <div>Monthly Budget</div>
+
+    <strong>
+        {{ expense_total|inr }} / {{ budget_limit|inr }}
+    </strong>
+
+    {% if budget_exceeded %}
+        <div style="margin-top:10px;color:yellow;font-weight:bold;">
+            ⚠ Budget Exceeded
+        </div>
+    {% else %}
+        <div style="margin-top:10px;">
+            Remaining: {{ budget_remaining|inr }}
+        </div>
+    {% endif %}
+</div>
 
     <h3 style="margin-top:20px;">Add Transaction</h3>
     <form method="POST" action="{{ url_for('finance.add_transaction') }}" class="task-form">

@@ -84,3 +84,21 @@ def register():
         return redirect(url_for('auth.login'))
     return render_template('register.html')
 
+@auth_bp.route('/profile')
+@login_required
+def profile():
+    from app.models import Transaction, Task
+
+    transaction_count = Transaction.query.filter_by(
+        user_id=current_user.id
+    ).count()
+
+    task_count = Task.query.filter_by(
+        user_id=current_user.id
+    ).count()
+
+    return render_template(
+        'profile.html',
+        transaction_count=transaction_count,
+        task_count=task_count
+    )

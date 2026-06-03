@@ -62,6 +62,11 @@ def dashboard():
 
     balance = income_total - expense_total
 
+    budget_limit = Decimal('10000')
+
+    budget_exceeded = expense_total > budget_limit
+
+    budget_remaining = budget_limit - expense_total
     # NEW FEATURE - Savings Goal
     savings_goal = Decimal('10000')
     goal_progress = min(
@@ -79,7 +84,10 @@ def dashboard():
         category_labels=_category_labels(transactions),
         category_values=_category_values(transactions),
         savings_goal=savings_goal,
-        goal_progress=goal_progress
+        goal_progress=goal_progress,
+        budget_limit=budget_limit,
+        budget_exceeded=budget_exceeded,
+        budget_remaining=budget_remaining
     )
 
 @finance_bp.route('/add', methods=["POST"])
